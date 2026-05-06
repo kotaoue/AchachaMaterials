@@ -29,10 +29,76 @@ AchachaMaterials/
 
 ### Generating Facial Expressions
 
-1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
-2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
-3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
-4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
+1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI) and place your checkpoint file under `ComfyUI/models/checkpoints/`.
+2. Start ComfyUI.
+
+   Example:
+
+   ```bash
+   cd /path/to/ComfyUI
+   python main.py
+   ```
+
+3. Open `http://127.0.0.1:8188` in your browser.
+4. Pick a character folder under `assets/characters/` and prepare a reference image if you want the design to inherit an existing icon or avatar.
+5. Import a `.json` workflow file from the `workflows/` directory into ComfyUI.
+
+   GUI example:
+
+   - Click `Load` in the top menu.
+   - Select a workflow JSON from this repository.
+   - Confirm that nodes such as `CheckpointLoaderSimple`, `LoadImage`, `CLIPTextEncode`, and `KSampler` appear on the canvas.
+
+6. Refer to prompts in the `prompts/` directory and adjust the prompt text, seed, CFG, steps, and denoise values.
+7. Click `Queue Prompt` to generate an image.
+8. Save generated images to the appropriate `assets/characters/<name>/base/` or `assets/characters/<name>/expressions/` folder.
+
+### Example: `chiken`
+
+- Reference image: `assets/characters/chiken/reference/kotaoue-icon.png`
+- Prompt guide: `prompts/characters/chiken/chiken_relaxed_yukkuri.md`
+- Prompt preset JSON: `prompts/characters/chiken/chiken_relaxed_yukkuri_preset.json`
+- Workflow template: `workflows/characters/chiken/chiken_relaxed_yukkuri_img2img_api.json`
+
+Suggested flow:
+
+1. Copy the reference image into the ComfyUI input directory.
+
+   Example:
+
+   ```bash
+   cp assets/characters/chiken/reference/kotaoue-icon.png /path/to/ComfyUI/input/
+   ```
+
+2. In the ComfyUI browser tab, click `Load` and open `workflows/characters/chiken/chiken_relaxed_yukkuri_img2img_api.json`.
+3. Click the `CheckpointLoaderSimple` node and set `ckpt_name` to your installed anime-oriented checkpoint.
+
+   Example values:
+
+   - `anything-v5.safetensors`
+   - `meinamix.safetensors`
+   - `animagine-xl.safetensors`
+
+4. Click the `LoadImage` node and confirm that `kotaoue-icon.png` is selected. If it is not shown, choose the file manually from the ComfyUI input folder.
+5. Open `prompts/characters/chiken/chiken_relaxed_yukkuri_preset.json` and copy the `positive` and `negative` prompt strings into the two `CLIPTextEncode` nodes.
+6. In the `KSampler` node, start with the following values.
+
+   - `seed`: `0` for random exploration, then reuse a fixed seed once you get a good base face
+   - `steps`: `28`
+   - `cfg`: `6.5`
+   - `sampler_name`: `dpmpp_2m`
+   - `scheduler`: `karras`
+   - `denoise`: `0.48`
+
+7. Click `Queue Prompt`.
+8. Review the output image.
+
+   - If the face is too different from the icon, lower `denoise` to `0.40` to `0.45`.
+   - If the image looks too realistic, lower `cfg` to around `5.5` and add `simple mascot design` to the positive prompt.
+   - If the expression is too weak, raise `denoise` to around `0.55` and append one variant such as `cheerful expression` or `wry smile`.
+
+9. When you get a good base portrait, save it to `assets/characters/chiken/base/`.
+10. For expression variations, keep the same checkpoint and seed, then append one of the expression variant prompts from `prompts/characters/chiken/chiken_relaxed_yukkuri.md` and save the outputs to `assets/characters/chiken/expressions/`.
 
 ## License
 

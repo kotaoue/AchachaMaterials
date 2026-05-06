@@ -1,0 +1,33 @@
+{
+    "name": "chiken-relaxed-yukkuri-v1",
+    "source_image": "assets/characters/chiken/reference/kotaoue-icon.png",
+    "intended_use": "Base portrait generation for Yukkuri-style commentary assets",
+    "model_recommendation": {
+        "type": "anime checkpoint",
+        "notes": "Use any SD1.5 or SDXL anime-oriented checkpoint with clean line art output."
+    },
+    "generation": {
+        "width": 768,
+        "height": 768,
+        "sampler": "dpmpp_2m",
+        "scheduler": "karras",
+        "steps": 28,
+        "cfg": 6.5,
+        "denoise": 0.48,
+        "seed": 0
+    },
+    "prompts": {
+        "positive": "masterpiece, best quality, anime illustration, relaxed mascot character, soft rounded face, simple eyes, small mouth, low-tension expression, friendly smile, fluffy dark hair, slightly messy short hair, casual hoodie, clean lineart, soft cel shading, muted colors, readable silhouette, streamer avatar style, yukkuri commentary friendly, front-facing portrait, upper body, plain background",
+        "negative": "photorealistic, realistic skin, 3d render, extra fingers, extra hands, bad anatomy, detailed wrinkles, overly dramatic lighting, horror, grotesque, text, watermark, logo, signature, cluttered background, sharp jawline, muscular body, old face, glossy latex, noisy details",
+        "variants": {
+            "neutral": "blank expression, relaxed eyes, tiny smile, calm mood",
+            "happy": "cheerful expression, closed smiling eyes, open smile, upbeat but soft mood",
+            "troubled": "wry smile, uneasy eyes, slightly tilted head, comedic awkwardness"
+        }
+    },
+    "adjustment_guide": {
+        "more_simple": "Add simple mascot design, flat colors and reduce cfg to 5.5.",
+        "more_avatar_like": "Reduce denoise to 0.4 to 0.45.",
+        "more_expressive": "Raise denoise to 0.55 and append one variant prompt."
+    }
+}
