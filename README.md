@@ -34,23 +34,16 @@ uv tool install comfy-cli
 
 export PATH="$HOME/.local/bin:$PATH"
 comfy install
-
-# example
-export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
-echo "$COMFY_DIR"
-cp ~/Downloads/model.safetensors "$COMFY_DIR/models/checkpoints/"
-
 ```
 
 ### Generating Facial Expressions
 
-1. Start ComfyUI.
+```sh
+comfy launch
+```
 
-   ```bash
-   comfy launch
-   ```
+Open <http://127.0.0.1:8188>.
 
-1. Open `http://127.0.0.1:8188` in your browser.
 1. Pick a character folder under `assets/characters/` and prepare a reference image if you want the design to inherit an existing icon or avatar.
 1. Import a `.json` workflow file from the `workflows/` directory into ComfyUI.
 
@@ -78,7 +71,8 @@ Suggested flow:
    Example:
 
    ```bash
-   cp assets/characters/chiken/reference/kotaoue-icon.png /path/to/ComfyUI/input/
+   export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
+   cp assets/characters/chiken/reference/kotaoue-icon.png "$COMFY_DIR/input/"
    ```
 
 2. In the ComfyUI browser tab, click `Load` and open `workflows/characters/chiken/chiken_relaxed_yukkuri_img2img_api.json`.
