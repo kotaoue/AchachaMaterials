@@ -4,5 +4,8 @@ dictionaryDefinitions: []
 dictionaries: []
 words:
   - Achacha
+  - ckpt
+  - pycache
+  - safetensors
 ignoreWords: []
 import: []

@@ -1,22 +1,17 @@
-# Stable Diffusion モデルファイル / Stable Diffusion model files
+# Stable Diffusion model files
 *.ckpt
 *.safetensors
 *.pt
 *.pth
 *.bin
 
-# 生成画像の一時ファイル / Temporary generated image files
-output/
-tmp/
-
-# ComfyUI キャッシュ / ComfyUI cache
+# ComfyUI cache
 __pycache__/
 *.pyc
 
-# OS ファイル / OS files
-.DS_Store
-Thumbs.db
+# Temporary generated image files
+output/
+tmp/
 
-# エディタ設定 / Editor settings
-.vscode/
-.idea/
+# OS files
+.DS_Store
