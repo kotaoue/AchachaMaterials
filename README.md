@@ -37,11 +37,8 @@ AchachaMaterials/
 ### Generating Facial Expressions
 
 1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
-
 2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
-
 3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
-
 4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
 
 ---
