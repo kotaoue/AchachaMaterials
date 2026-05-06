@@ -6,27 +6,17 @@ A repository for managing materials used in the [OhYeahAchacha](https://www.yout
 
 ```text
 AchachaMaterials/
-├── assets/
-│   ├── characters/
+├── assets/                        # Root directory for all assets
+│   ├── characters/                # Character assets
 │   │   └── <character_name>/
-│   │       ├── base/
-│   │       └── expressions/
-│   ├── logos/
-│   ├── backgrounds/
-│   └── props/
-├── workflows/
-├── prompts/
+│   │       ├── base/              # Base images
+│   │       └── expressions/       # Facial expression variants
+│   ├── logos/                     # Logo assets
+│   ├── backgrounds/               # Background assets
+│   └── props/                     # Prop assets
+├── workflows/                     # ComfyUI workflow JSON files
+└── prompts/                       # Stable Diffusion prompts
 ```
-
-- `assets/`: Root directory for all assets
-- `characters/`: Character assets
-- `base/`: Base images
-- `expressions/`: Facial expression variants
-- `logos/`: Logo assets
-- `backgrounds/`: Background assets
-- `props/`: Prop assets
-- `workflows/`: ComfyUI workflow JSON files
-- `prompts/`: Stable Diffusion prompts
 
 ## Environment
 
