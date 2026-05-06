@@ -1,0 +1,17 @@
+# Stable Diffusion model files
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# ComfyUI cache
+__pycache__/
+*.pyc
+
+# Temporary generated image files
+output/
+tmp/
+
+# OS files
+.DS_Store
