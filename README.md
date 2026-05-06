@@ -27,21 +27,39 @@ AchachaMaterials/
 
 ## Usage
 
-### Generating Facial Expressions
+### Setup Comfy
 
-1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI) and place your checkpoint file under `ComfyUI/models/checkpoints/`.
-2. Start ComfyUI.
+1. Install `comfy-cli`.
+
+   ```bash
+   uv tool install comfy-cli
+   ```
+
+2. Install ComfyUI with `comfy-cli`.
+
+   ```bash
+   comfy install
+   ```
+
+3. Place your checkpoint file under `ComfyUI/models/checkpoints/`.
 
    Example:
 
    ```bash
-   cd /path/to/ComfyUI
-   python main.py
+   cp /path/to/model.safetensors /path/to/ComfyUI/models/checkpoints/
    ```
 
-3. Open `http://127.0.0.1:8188` in your browser.
-4. Pick a character folder under `assets/characters/` and prepare a reference image if you want the design to inherit an existing icon or avatar.
-5. Import a `.json` workflow file from the `workflows/` directory into ComfyUI.
+### Generating Facial Expressions
+
+1. Start ComfyUI.
+
+   ```bash
+   comfy launch
+   ```
+
+2. Open `http://127.0.0.1:8188` in your browser.
+3. Pick a character folder under `assets/characters/` and prepare a reference image if you want the design to inherit an existing icon or avatar.
+4. Import a `.json` workflow file from the `workflows/` directory into ComfyUI.
 
    GUI example:
 
@@ -49,9 +67,9 @@ AchachaMaterials/
    - Select a workflow JSON from this repository.
    - Confirm that nodes such as `CheckpointLoaderSimple`, `LoadImage`, `CLIPTextEncode`, and `KSampler` appear on the canvas.
 
-6. Refer to prompts in the `prompts/` directory and adjust the prompt text, seed, CFG, steps, and denoise values.
-7. Click `Queue Prompt` to generate an image.
-8. Save generated images to the appropriate `assets/characters/<name>/base/` or `assets/characters/<name>/expressions/` folder.
+5. Refer to prompts in the `prompts/` directory and adjust the prompt text, seed, CFG, steps, and denoise values.
+6. Click `Queue Prompt` to generate an image.
+7. Save generated images to the appropriate `assets/characters/<name>/base/` or `assets/characters/<name>/expressions/` folder.
 
 ### Example: `chiken`
 
