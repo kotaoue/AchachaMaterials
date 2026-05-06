@@ -32,6 +32,15 @@ AchachaMaterials/
 
 ---
 
+## Environment
+
+| Tool | Purpose |
+| --- | --- |
+| [ComfyUI](https://github.com/comfyanonymous/ComfyUI) | Node-based image generation UI |
+| [Stable Diffusion](https://stability.ai/) | Image generation model |
+
+---
+
 ## Usage
 
 ### Generating Facial Expressions
@@ -40,15 +49,6 @@ AchachaMaterials/
 2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
 3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
 4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
-
----
-
-## Environment
-
-| Tool | Purpose |
-| --- | --- |
-| [ComfyUI](https://github.com/comfyanonymous/ComfyUI) | Node-based image generation UI |
-| [Stable Diffusion](https://stability.ai/) | Image generation model |
 
 ---
 
