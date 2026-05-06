@@ -18,21 +18,27 @@ This repository manages character assets and facial expression variations (表�
 
 ```text
 AchachaMaterials/
-├── characters/
-│   └── <character_name>/
-│       ├── base/
-│       └── expressions/
+├── assets/
+│   ├── characters/
+│   │   └── <character_name>/
+│   │       ├── base/
+│   │       └── expressions/
+│   ├── logos/
+│   ├── backgrounds/
+│   └── props/
 ├── workflows/
 ├── prompts/
-└── assets/
 ```
 
+- `assets/`: 素材置き場のルート / Root directory for all assets
 - `characters/`: キャラクター素材 / Character assets
 - `base/`: ベース画像 / Base images
 - `expressions/`: 表情差分 / Facial expression variants
+- `logos/`: ロゴ素材 / Logo assets
+- `backgrounds/`: 背景素材 / Background assets
+- `props/`: 小物素材 / Prop assets
 - `workflows/`: ComfyUI ワークフロー / ComfyUI workflow JSON files
 - `prompts/`: プロンプト集 / Stable Diffusion prompts
-- `assets/`: その他の素材 / Other assets (backgrounds, props, etc.)
 
 ---
 
@@ -49,8 +55,8 @@ AchachaMaterials/
 3. `prompts/` 内のプロンプトを参考にパラメータを調整する  
    Refer to prompts in the `prompts/` directory to adjust generation parameters.
 
-4. 生成した画像を対応する `characters/<name>/expressions/` に保存する  
-   Save generated images to the appropriate `characters/<name>/expressions/` folder.
+4. 生成した画像を対応する `assets/characters/<name>/expressions/` に保存する  
+   Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
 
 ---
 
