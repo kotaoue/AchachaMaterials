@@ -16,16 +16,23 @@ This repository manages character assets and facial expression variations (表�
 
 ## ディレクトリ構成 / Directory Structure
 
-```
+```text
 AchachaMaterials/
-├── characters/          # キャラクター素材 / Character assets
+├── characters/
 │   └── <character_name>/
-│       ├── base/        # ベース画像 / Base images
-│       └── expressions/ # 表情差分 / Facial expression variants
-├── workflows/           # ComfyUI ワークフロー / ComfyUI workflow JSON files
-├── prompts/             # プロンプト集 / Stable Diffusion prompts
-└── assets/              # その他の素材 / Other assets (backgrounds, props, etc.)
+│       ├── base/
+│       └── expressions/
+├── workflows/
+├── prompts/
+└── assets/
 ```
+
+- `characters/`: キャラクター素材 / Character assets
+- `base/`: ベース画像 / Base images
+- `expressions/`: 表情差分 / Facial expression variants
+- `workflows/`: ComfyUI ワークフロー / ComfyUI workflow JSON files
+- `prompts/`: プロンプト集 / Stable Diffusion prompts
+- `assets/`: その他の素材 / Other assets (backgrounds, props, etc.)
 
 ---
 
@@ -50,7 +57,7 @@ AchachaMaterials/
 ## 環境 / Environment
 
 | ツール / Tool | 用途 / Purpose |
-|---|---|
+| --- | --- |
 | [ComfyUI](https://github.com/comfyanonymous/ComfyUI) | ノードベースの画像生成 UI / Node-based image generation UI |
 | [Stable Diffusion](https://stability.ai/) | 画像生成モデル / Image generation model |
 
