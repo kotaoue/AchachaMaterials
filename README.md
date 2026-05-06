@@ -31,11 +31,13 @@ AchachaMaterials/
 
 ```sh
 uv tool install comfy-cli
+
+export PATH="$HOME/.local/bin:$PATH"
 comfy install
 
-COMFY_DIR="$(find "$HOME" -type d -name ComfyUI 2>/dev/null | head -n 1)"
+# example
+export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
 echo "$COMFY_DIR"
-
 cp ~/Downloads/model.safetensors "$COMFY_DIR/models/checkpoints/"
 
 ```
