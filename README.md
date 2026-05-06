@@ -6,14 +6,6 @@ A repository for managing materials used in the [OhYeahAchacha](https://www.yout
 
 ---
 
-## 概要 / Overview
-
-ComfyUI + Stable Diffusion を使って、動画に登場するキャラクターの表情差分などを作成・管理します。
-
-This repository manages character assets and facial expression variations (表情差分) created with ComfyUI + Stable Diffusion for use in YouTube videos.
-
----
-
 ## ディレクトリ構成 / Directory Structure
 
 ```text
