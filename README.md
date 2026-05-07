@@ -14,7 +14,7 @@ AchachaMaterials/
 │   ├── logos/                     # Logo assets
 │   ├── backgrounds/               # Background assets
 │   └── props/                     # Prop assets
-├── workflows/                     # ComfyUI workflow JSON files
+├── workflows/                     # ComfyUI workflow files
 └── prompts/                       # Stable Diffusion prompts
 ```
 
