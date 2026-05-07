@@ -53,8 +53,6 @@ comfy launch
 
 Open <http://127.0.0.1:8188>.
 
-**Setup:**
-
 1. Click `Load` and open the workflow JSON from `workflows/characters/<character>/`.
 2. Click the `CheckpointLoaderSimple` node and set `ckpt_name` to your installed checkpoint (e.g., `anything-v5.safetensors`, `meinamix.safetensors`, `animagine-xl.safetensors`).
 3. Click the `LoadImage` node and confirm that your reference image is selected.
@@ -87,3 +85,8 @@ Open <http://127.0.0.1:8188>.
 ## License
 
 See the `LICENSE` file in each directory for the license of individual assets.
+
+## Links
+
+- [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [huggingface](https://huggingface.co/)
