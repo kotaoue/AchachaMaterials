@@ -30,12 +30,60 @@ AchachaMaterials/
 
 ## Usage
 
+### Setup Comfy
+
+```sh
+uv tool install comfy-cli
+
+export PATH="$HOME/.local/bin:$PATH"
+comfy install
+```
+
 ### Generating Facial Expressions
 
-1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
-2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
-3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
-4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
+1. Setup.
+
+   Example (`chiken`):
+
+   ```bash
+   export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
+   cp assets/characters/chiken/reference/kotaoue-icon.png "$COMFY_DIR/input/"
+   ```
+
+```sh
+comfy launch
+```
+
+Open <http://127.0.0.1:8188>.
+
+1. Click `Load` and open the workflow JSON from `workflows/characters/<character>/`.
+2. Click the `CheckpointLoaderSimple` node and set `ckpt_name` to your installed checkpoint (e.g., `anything-v5.safetensors`, `meinamix.safetensors`, `animagine-xl.safetensors`).
+3. Click the `LoadImage` node and confirm that your reference image is selected.
+4. Open the prompt preset JSON from `prompts/characters/<character>/` and copy the `positive` and `negative` strings into the two `CLIPTextEncode` nodes.
+
+**Generation:**
+
+1. In the `KSampler` node, adjust the parameters:
+
+   - `seed`: `0` for exploration, then fix once satisfied
+   - `steps`: `28`
+   - `cfg`: `6.5`
+   - `sampler_name`: `dpmpp_2m`
+   - `scheduler`: `karras`
+   - `denoise`: `0.48`
+
+2. Click `Queue Prompt`.
+
+**Review & Adjust:**
+
+1. Review the output image and adjust if needed:
+
+   - Too different from reference → lower `denoise` to `0.40–0.45`
+   - Too realistic → lower `cfg` to `5.5` and add `simple mascot design` to positive prompt
+   - Expression too weak → raise `denoise` to `0.55` and append `cheerful expression` or similar
+
+2. Save base portrait to `assets/characters/<character>/base/`.
+3. For expressions, keep the same checkpoint and seed, append variant prompts from the prompt guide, and save to `assets/characters/<character>/expressions/`.
 
 ### Generating Logos (ComfyUI)
 
@@ -72,3 +120,8 @@ Checklist before commit:
 ## License
 
 See the `LICENSE` file in each directory for the license of individual assets.
+
+## Links
+
+- [ComfyUI](https://github.com/comfyanonymous/ComfyUI)
+- [huggingface](https://huggingface.co/)

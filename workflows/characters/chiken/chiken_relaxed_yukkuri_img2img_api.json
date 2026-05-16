@@ -1,0 +1,122 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "put_your_anime_checkpoint_here.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "kotaoue-icon.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Reference Avatar"
+    }
+  },
+  "3": {
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "Encode Reference"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "masterpiece, best quality, anime illustration, relaxed mascot character, soft rounded face, simple eyes, small mouth, low-tension expression, friendly smile, fluffy dark hair, slightly messy short hair, casual hoodie, clean lineart, soft cel shading, muted colors, readable silhouette, streamer avatar style, yukkuri commentary friendly, front-facing portrait, upper body, plain background",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "photorealistic, realistic skin, 3d render, extra fingers, extra hands, bad anatomy, detailed wrinkles, overly dramatic lighting, horror, grotesque, text, watermark, logo, signature, cluttered background, sharp jawline, muscular body, old face, glossy latex, noisy details",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "6": {
+    "inputs": {
+      "seed": 0,
+      "steps": 28,
+      "cfg": 6.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.48,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "img2img Sampler"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "filename_prefix": "chiken/base/chiken_relaxed_yukkuri",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Base Image"
+    }
+  }
+}
