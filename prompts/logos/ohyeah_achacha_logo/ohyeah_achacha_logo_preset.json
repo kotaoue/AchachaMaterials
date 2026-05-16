@@ -1,0 +1,39 @@
+{
+    "name": "ohyeah-achacha-logo-v1",
+    "channel": "オーイェーのアチャチャチャンネル",
+    "intended_use": "Channel logo generation for OhYeahAchacha YouTube channel",
+    "model_recommendation": {
+        "type": "anime / illustration checkpoint",
+        "notes": "Use any SD1.5 or SDXL checkpoint optimised for flat illustration or vector-like output (e.g. ToonYou, CounterfeitXL, AnythingXL)."
+    },
+    "generation": {
+        "width": 1024,
+        "height": 1024,
+        "sampler": "dpmpp_2m",
+        "scheduler": "karras",
+        "steps": 28,
+        "cfg": 7.0,
+        "denoise": 1.0,
+        "seed": -1
+    },
+    "prompts": {
+        "positive": "masterpiece, best quality, channel logo design, pop art style, bold thick outlines, vibrant colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, readable at small size, versatile layout, no background, cutout style, anime-inspired lettering, bright saturated palette",
+        "negative": "photorealistic, realistic texture, 3d render, drop shadow only, thin strokes, busy background, gradient background, white background, black background, watermark, signature, cluttered composition, muted colors, low contrast, blur, noise",
+        "color_variants": {
+            "full_color": "vibrant yellow orange red palette, saturated colors",
+            "monochrome": "single color, monochrome, grayscale outline",
+            "white_on_dark": "white fill, dark thick outline, high contrast"
+        }
+    },
+    "size_targets": {
+        "1x":     { "width": 512,  "height": 512,  "use_case": "Small icon / avatar" },
+        "2x":     { "width": 1024, "height": 1024, "use_case": "Standard use" },
+        "banner": { "width": 1920, "height": 480,  "use_case": "YouTube channel art / banner" }
+    },
+    "adjustment_guide": {
+        "more_pop": "Add pop art, halftone dots, bold comic style and raise cfg to 7.5.",
+        "more_outline": "Append thick black outline, stroke border, outlined art style to positive prompt.",
+        "more_transparent": "Post-process with background removal (rembg or similar) if alpha output is unavailable.",
+        "lora_notes": "For LoRA training start with network_dim=32, lr=1e-4, 1500 steps, 15-30 style-consistent reference images."
+    }
+}
