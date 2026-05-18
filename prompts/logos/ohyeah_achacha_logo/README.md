@@ -2,25 +2,21 @@
 
 オーイェーのアチャチャチャンネル用ロゴを ComfyUI で生成する手順書です。
 
----
-
-## ファイル構成
-
-| パス | 内容 |
-| --- | --- |
-| `prompts/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_preset.json` | プロンプト・生成パラメータのプリセット |
-| `workflows/logos/ohyeah_achacha_logo_txt2img_api.json` | ComfyUI API 用ワークフロー |
-| `assets/logos/ohyeah_achacha_logo/` | 生成済み画像の保存先 |
-
----
-
 ## 前提条件
 
-- ComfyUI が起動していること
-- アニメ / イラスト系チェックポイントが ComfyUI の `models/checkpoints/` に配置済みであること  
-  (例: ToonYou, CounterfeitXL, AnythingXL など)
+ComfyUI を起動する。
 
----
+```bash
+# ComfyUI の起動
+cd /path/to/ComfyUI
+uv run python main.py
+```
+
+アニメ / イラスト系チェックポイント (ToonYou, CounterfeitXL, AnythingXL など) を配置する。
+
+```bash
+cp your_model.safetensors /path/to/ComfyUI/models/checkpoints/
+```
 
 ## 生成手順
 
@@ -51,8 +47,6 @@ workflows/logos/ohyeah_achacha_logo_txt2img_api.json
 
 生成画像を `assets/logos/ohyeah_achacha_logo/` にコピーして管理する。
 
----
-
 ## バリエーション生成
 
 ### カラーバリエーション
@@ -75,7 +69,3 @@ workflows/logos/ohyeah_achacha_logo_txt2img_api.json
 | アイコン / アバター | 512×512 |
 | 標準 | 1024×1024 |
 | バナー | 1920×480 |
-
-3. **img2img** (denoise 低め) で細部を調整する
-2. SaveImage ノードまたは後処理でアルファチャンネル (透過背景) を有効にして書き出す
-3. サイズターゲットに合わせてスケール・クロップして納品する
