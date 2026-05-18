@@ -1,103 +1,81 @@
 # OhYeah AchaAcha Logo
 
-**チャンネル:** オーイェーのアチャチャチャンネル (OhYeahAchacha)
-
-YouTube チャンネルロゴを AI 生成するためのプリセットおよびワークフロー一式です。
+オーイェーのアチャチャチャンネル用ロゴを ComfyUI で生成する手順書です。
 
 ---
 
-## ディレクトリ構成
+## ファイル構成
 
-| ファイル | 内容 |
+| パス | 内容 |
 | --- | --- |
-| `ohyeah_achacha_logo_preset.json` | 生成パラメータのプリセット (ComfyUI API 向け) |
-| `ohyeah_achacha_logo.md` | プロンプト仕様書 (各項目の詳細説明) |
+| `prompts/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_preset.json` | プロンプト・生成パラメータのプリセット |
+| `workflows/logos/ohyeah_achacha_logo_txt2img_api.json` | ComfyUI API 用ワークフロー |
+| `assets/logos/ohyeah_achacha_logo/` | 生成済み画像の保存先 |
 
 ---
 
-## デザイン方針
+## 前提条件
 
-- **スタイル:** ポップアート・太いアウトライン・高コントラスト
-- **ムード:** 明るく元気、バラエティ系 YouTube に合うエネルギッシュな雰囲気
-- **背景:** 透過 (transparent background)
-- **避けること:** フォトリアル、細い線、ごちゃついた背景、ドロップシャドウのみ
+- ComfyUI が起動していること
+- アニメ / イラスト系チェックポイントが ComfyUI の `models/checkpoints/` に配置済みであること  
+  (例: ToonYou, CounterfeitXL, AnythingXL など)
 
 ---
 
-## プロンプト
+## 生成手順
 
-### Positive
+### 1. ワークフローを読み込む
 
-```text
-masterpiece, best quality, channel logo design, pop art style, bold thick outlines,
-vibrant colors, high contrast, transparent background, clean vector-like illustration,
-flat shading, cheerful energetic mood, readable at small size, versatile layout,
-no background, cutout style, anime-inspired lettering, bright saturated palette
+ComfyUI の **Load** ボタンから以下を読み込む。
+
+```
+workflows/logos/ohyeah_achacha_logo_txt2img_api.json
 ```
 
-### Negative
+### 2. チェックポイントを設定する
 
-```text
-photorealistic, realistic texture, 3d render, drop shadow only, thin strokes,
-busy background, gradient background, white background, black background,
-watermark, signature, cluttered composition, muted colors, low contrast, blur, noise
-```
+ワークフロー内の **Load Checkpoint** ノードで、使用するモデルファイル名を選択する。
+
+> デフォルト値は `put_your_anime_checkpoint_here.safetensors` (プレースホルダー)
+
+### 3. 生成を実行する
+
+**Queue Prompt** を押して実行する。  
+生成された画像は ComfyUI の output フォルダ内 `ohyeah_achacha_logo/` に保存される。
+
+### 4. 構図を確定する
+
+気に入った結果が出たら **KSampler** ノードの seed 値を固定する。
+
+### 5. 成果物を配置する
+
+生成画像を `assets/logos/ohyeah_achacha_logo/` にコピーして管理する。
 
 ---
 
-## 生成設定
+## バリエーション生成
 
-| パラメータ | 値 |
+### カラーバリエーション
+
+気に入った seed を固定した状態で img2img に切り替え、denoise を `0.30–0.40` に下げ、  
+**Positive Prompt** の末尾に以下を追記して再生成する。
+
+| バリアント | 追記するプロンプト |
 | --- | --- |
-| モデル推奨 | アニメ / イラスト系チェックポイント (ToonYou, CounterfeitXL, AnythingXL など) |
-| Sampler | DPM++ 2M Karras |
-| Steps | 28 |
-| CFG | 7.0 |
-| Denoise | 1.0 (txt2img) |
-| 解像度 | 1024×1024 (その後サイズ別にスケール・クロップ) |
-| Seed | 探索中はランダム、構図が決まったら固定 |
+| `full_color` | `vibrant yellow orange red palette, saturated colors` |
+| `monochrome` | `single color, monochrome, grayscale outline` |
+| `white_on_dark` | `white fill, dark thick outline, high contrast` |
 
----
+### サイズバリエーション
 
-## カラーバリエーション
+同一 seed のまま **Empty Latent Image** ノードの解像度を変更して再生成する。
 
-| バリアント | 追加プロンプト |
+| 用途 | 解像度 |
 | --- | --- |
-| `full_color` | vibrant yellow orange red palette, saturated colors |
-| `monochrome` | single color, monochrome, grayscale outline |
-| `white_on_dark` | white fill, dark thick outline, high contrast |
+| アイコン / アバター | 512×512 |
+| 標準 | 1024×1024 |
+| バナー | 1920×480 |
 
-カラーバリエーションは img2img で denoise 0.30–0.40 にし、上記プロンプトを追記して生成します。
-
----
-
-## サイズターゲット
-
-| 名称 | 解像度 | 用途 |
-| --- | --- | --- |
-| `1x` | 512×512 | 小アイコン / アバター |
-| `2x` | 1024×1024 | 標準使用 |
-| `banner` | 1920×480 | YouTube チャンネルアート / バナー |
-
-同一シードで解像度のみ変更するか、アップスケールノードで出力します。
-
----
-
-## 調整ガイド
-
-| 目的 | 対処法 |
-| --- | --- |
-| よりポップに | `pop art, halftone dots, bold comic style` を追加、CFG を 7.5 に上げる |
-| アウトラインを強調 | `thick black outline, stroke border, outlined art style` を追加 |
-| 透過処理 | アルファ出力が使えない場合は rembg 等で後処理 |
-| LoRA 学習 | `network_dim=32`, `lr=1e-4`, 1500 steps、スタイル統一した参照画像 15〜30 枚 |
-
----
-
-## ワークフロー手順
-
-1. **txt2img** で構図を探索する
-2. 気に入ったシードが出たら固定する
 3. **img2img** (denoise 低め) で細部を調整する
-4. SaveImage ノードまたは後処理でアルファチャンネル (透過背景) を有効にして書き出す
-5. サイズターゲットに合わせてスケール・クロップして納品する
+2. SaveImage ノードまたは後処理でアルファチャンネル (透過背景) を有効にして書き出す
+3. サイズターゲットに合わせてスケール・クロップして納品する
