@@ -40,7 +40,8 @@ export PATH="$HOME/.local/bin:$PATH"
 comfy install
 ```
 
-Set your ComfyUI directory and place required files:
+Set your ComfyUI directory (the folder created by `comfy install`) and place required files.
+For `your_model.safetensors`, use an SD model checkpoint file that matches your workflow:
 
 ```sh
 export COMFY_DIR="/path/to/ComfyUI"
