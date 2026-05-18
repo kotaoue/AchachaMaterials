@@ -4,18 +4,25 @@
 
 ## 前提条件
 
-ComfyUI を起動する。
+comfy-cli をインストールして ComfyUI をセットアップする。
 
-```bash
-# ComfyUI の起動
-cd /path/to/ComfyUI
-uv run python main.py
+```sh
+uv tool install comfy-cli
+export PATH="$HOME/.local/bin:$PATH"
+comfy install
 ```
 
 アニメ / イラスト系チェックポイント (ToonYou, CounterfeitXL, AnythingXL など) を配置する。
 
 ```bash
-cp your_model.safetensors /path/to/ComfyUI/models/checkpoints/
+export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
+cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
+```
+
+ComfyUI を起動する。
+
+```sh
+comfy launch
 ```
 
 ## 生成手順
