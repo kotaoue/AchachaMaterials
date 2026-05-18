@@ -30,9 +30,33 @@ AchachaMaterials/
 
 ## Usage
 
+### ComfyUI Setup Commands
+
+Install `comfy-cli` and initialize ComfyUI:
+
+```sh
+uv tool install comfy-cli
+export PATH="$HOME/.local/bin:$PATH"
+comfy install
+```
+
+Set your ComfyUI directory and place required files:
+
+```sh
+export COMFY_DIR="/path/to/ComfyUI"
+cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
+cp assets/characters/<character>/reference/<reference_image>.png "$COMFY_DIR/input/"
+```
+
+Launch ComfyUI:
+
+```sh
+comfy launch
+```
+
 ### Generating Facial Expressions
 
-1. Set up [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
+1. Run the setup commands above.
 2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
 3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
 4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
