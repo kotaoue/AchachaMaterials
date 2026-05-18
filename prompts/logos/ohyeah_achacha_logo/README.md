@@ -28,7 +28,7 @@ YouTube チャンネルロゴを AI 生成するためのプリセットおよ�
 
 ### Positive
 
-```
+```text
 masterpiece, best quality, channel logo design, pop art style, bold thick outlines,
 vibrant colors, high contrast, transparent background, clean vector-like illustration,
 flat shading, cheerful energetic mood, readable at small size, versatile layout,
@@ -37,7 +37,7 @@ no background, cutout style, anime-inspired lettering, bright saturated palette
 
 ### Negative
 
-```
+```text
 photorealistic, realistic texture, 3d render, drop shadow only, thin strokes,
 busy background, gradient background, white background, black background,
 watermark, signature, cluttered composition, muted colors, low contrast, blur, noise
