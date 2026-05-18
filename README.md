@@ -46,7 +46,7 @@ For `your_model.safetensors`, use an SD model checkpoint file that matches your 
 ```sh
 export COMFY_DIR="$HOME/ComfyUI"
 cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
-cp assets/characters/<character>/reference/<reference_image>.png "$COMFY_DIR/input/"
+cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_DIR/input/"
 ```
 
 Launch ComfyUI:
