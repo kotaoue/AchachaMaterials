@@ -44,8 +44,8 @@ Set your ComfyUI directory (the folder created by `comfy install`) and place req
 For `your_model.safetensors`, use an SD model checkpoint file that matches your workflow:
 
 ```sh
-export COMFY_DIR="/home/<user>/ComfyUI"
-cp sdxl_base.safetensors "$COMFY_DIR/models/checkpoints/"
+export COMFY_DIR="$HOME/ComfyUI"
+cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
 cp assets/characters/<character>/reference/<reference_image>.png "$COMFY_DIR/input/"
 ```
 
