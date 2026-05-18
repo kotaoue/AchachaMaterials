@@ -5,11 +5,18 @@ dictionaries: []
 words:
   - Achacha
   - ckpt
+  - denoise
+  - dpmpp
+  - grayscale
+  - karras
   - kotaoue
   - LoRA
   - ohyeah
+  - optimised
   - pycache
   - rembg
   - safetensors
+  - SDXL
+  - Toon
 ignoreWords: []
 import: []
