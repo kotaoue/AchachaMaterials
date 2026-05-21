@@ -4,26 +4,9 @@
 
 ## 前提条件
 
-comfy-cli をインストールして ComfyUI をセットアップする。
+ComfyUI のセットアップ手順は [リポジトリ README](../../../README.md#comfyui-setup-commands) を参照してください。
 
-```sh
-uv tool install comfy-cli
-export PATH="$HOME/.local/bin:$PATH"
-comfy install
-```
-
-アニメ / イラスト系チェックポイント (ToonYou, CounterfeitXL, AnythingXL など) を配置する。
-
-```bash
-export COMFY_DIR="/Users/kotaoue/Documents/comfy/ComfyUI"
-cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
-```
-
-ComfyUI を起動する。
-
-```sh
-comfy launch
-```
+チェックポイントはアニメ / イラスト系 (ToonYou, CounterfeitXL, AnythingXL など) を使用してください。
 
 ## 生成手順
 
