@@ -8,6 +8,38 @@ ComfyUI のセットアップ手順は [リポジトリ README](../../../README.
 
 チェックポイントはアニメ / イラスト系 (ToonYou, CounterfeitXL, AnythingXL など) を使用してください。
 
+## チェックポイントのおすすめDL方法
+
+このワークフローは 1024×1024 生成前提なので、まずは SDXL 系のアニメ / イラスト向けチェックポイントを 1 つ入れるのがおすすめです。
+
+### 推奨: CounterfeitXL を Hugging Face CLI でDLする
+
+`uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
+
+```sh
+export COMFY_DIR="$HOME/ComfyUI"
+mkdir -p "$COMFY_DIR/models/checkpoints"
+
+uvx hf download Simplicity-Ai/CounterfeitXL \
+  CounterfeitXL_V2.5.safetensors \
+  --local-dir "$COMFY_DIR/models/checkpoints"
+```
+
+DL後、ComfyUI を再起動するかブラウザを更新し、**Load Checkpoint** ノードで
+`CounterfeitXL_V2.5.safetensors` を選択してください。
+
+### 代替: AnythingXL をブラウザでDLする
+
+Civitai から AnythingXL の `fp16 SafeTensor` をDLし、以下に配置します。
+
+```sh
+export COMFY_DIR="$HOME/ComfyUI"
+mkdir -p "$COMFY_DIR/models/checkpoints"
+cp ~/Downloads/*.safetensors "$COMFY_DIR/models/checkpoints/"
+```
+
+チェックポイントは `.ckpt` より `.safetensors` を優先してください。
+
 ## 生成手順
 
 ### 1. ワークフローを読み込む
