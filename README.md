@@ -64,35 +64,13 @@ comfy launch
 
 ### Generating Logos (ComfyUI)
 
-1. Prepare model files in ComfyUI.
-2. Open ComfyUI and load your logo workflow JSON.
-3. Set logo concept prompts (main prompt and negative prompt).
-4. Fix reproducibility parameters before generation:
-    - Seed
-    - Steps
-    - CFG
-    - Sampler / Scheduler
-    - Image size
-5. Generate draft variations and pick candidates.
-6. Refine selected candidates by adjusting prompt, denoise strength, and style-related nodes.
-7. Export final images and store them under `assets/logos/`.
-8. Save reproducibility artifacts to this repository:
-    - Workflow JSON: `workflows/logos/<logo_name>.json`
-    - Prompt text: `prompts/logos/<logo_name>.txt`
-    - Optional notes (seed, model, sampler): append to the same prompt file.
+Logo-specific generation steps live under `prompts/logos/<logo_name>/`.
 
-Recommended output naming:
+Current logo guides:
 
-- `assets/logos/<logo_name>/<logo_name>_v001.png`
-- `assets/logos/<logo_name>/<logo_name>_v002.png`
-- `assets/logos/<logo_name>/<logo_name>_final.png`
+- [OhYeah AchaAcha Logo](prompts/logos/ohyeah_achacha_logo/README.md)
 
-Checklist before commit:
-
-- Workflow JSON is included in `workflows/logos/`.
-- Prompt text is included in `prompts/logos/`.
-- Final selected logo exists in `assets/logos/`.
-- README instructions still match the actual generation flow.
+Generated logo images should be stored under `assets/logos/<logo_name>/`, and ComfyUI workflows should be stored under `workflows/logos/`.
 
 ## License
 
