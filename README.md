@@ -32,27 +32,23 @@ AchachaMaterials/
 
 ### ComfyUI Setup Commands
 
-Install `comfy-cli` and initialize ComfyUI:
-
 ```sh
+# install
 uv tool install comfy-cli
-export PATH="$HOME/.local/bin:$PATH"
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 comfy install
 ```
 
-Set your ComfyUI directory (the folder created by `comfy install`) and place required files.
-For `your_model.safetensors`, use an SD model checkpoint file that matches your workflow:
-replace each `your_*` value below with your actual file or directory names.
-
 ```sh
+# setup. example
 export COMFY_DIR="$HOME/ComfyUI"
 cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
 cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_DIR/input/"
 ```
 
-Launch ComfyUI:
-
 ```sh
+# launch
 comfy launch
 ```
 
