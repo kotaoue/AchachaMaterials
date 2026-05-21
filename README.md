@@ -50,7 +50,10 @@ cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_D
 ```sh
 # launch
 comfy launch
+
 ```
+
+<http://127.0.0.1:8188>
 
 ### Generating Facial Expressions
 
