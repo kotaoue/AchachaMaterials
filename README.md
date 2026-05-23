@@ -46,7 +46,6 @@ comfy install
 # setup
 export COMFY_DIR="$HOME/ComfyUI"
 cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
-cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_DIR/input/"
 ```
 
 ```sh
