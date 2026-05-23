@@ -10,7 +10,9 @@ ComfyUI のセットアップ手順は [リポジトリ README](../../../README.
 
 このワークフローは 1024×1024 生成前提なので、まずは SDXL 系のアニメ / イラスト向けチェックポイントを 1 つ入れるのがおすすめです。
 
-### 推奨: CounterfeitXL を Hugging Face CLI でDLする
+CounterfeitXL はロゴ用途にも向いており、フラットなイラスト・クリーンな輪郭線・ポップなカラーリングが得意なため、このロゴワークフローで推奨しています（キャラクター生成専用ではありません）。
+
+### 推奨モデル: CounterfeitXL を Hugging Face CLI でDLする
 
 `uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
 
@@ -23,9 +25,9 @@ uvx hf download Simplicity-Ai/CounterfeitXL \
 DL後、ComfyUI を再起動するかブラウザを更新し、**Load Checkpoint** ノードで
 `CounterfeitXL_V2.5.safetensors` を選択してください。
 
-### 代替: AnythingXL をブラウザでDLする
+### 代替モデル: AnythingXL をブラウザでDLする
 
-Civitai から AnythingXL の `fp16 SafeTensor` をDLし、以下に配置します。
+CounterfeitXL の代わりに使える別の SDXL チェックポイントです。Civitai から AnythingXL の `fp16 SafeTensor` をDLし、以下に配置します。
 
 ```sh
 export COMFY_DIR="$HOME/ComfyUI"
