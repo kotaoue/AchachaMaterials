@@ -34,22 +34,14 @@ AchachaMaterials/
 
 ## Usage
 
-### ComfyUI Setup Commands
+### Install & Launch
 
 ```sh
-# install
 uv tool install comfy-cli
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 comfy install
 
-# setup
-export COMFY_DIR="$HOME/ComfyUI"
-cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
-```
-
-```sh
-# launch
 comfy launch
 ```
 
