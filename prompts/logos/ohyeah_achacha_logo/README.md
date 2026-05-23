@@ -1,4 +1,4 @@
-# OhYeah AchaAcha Logo
+# OhYeah Achacha Logo
 
 オーイェーのアチャチャチャンネル用ロゴを ComfyUI で生成する手順書です。
 
