@@ -21,6 +21,10 @@ AchachaMaterials/
  └── logos/
 ```
 
+## Materials
+
+- [Logo](prompts/logos/ohyeah_achacha_logo/README.md)
+
 ## Environment
 
 | Tool | Purpose |
@@ -54,14 +58,3 @@ comfy launch
 ```
 
 <http://127.0.0.1:8188>
-
-### Generating Facial Expressions
-
-1. Run the setup commands above.
-2. Load a `.json` workflow file from the `workflows/` directory into ComfyUI.
-3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
-4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
-
-### Materials
-
-- [Logo](prompts/logos/ohyeah_achacha_logo/README.md)
