@@ -31,6 +31,8 @@ Civitai から AnythingXL の `fp16 SafeTensor` をDLし、以下に配置しま
 export COMFY_DIR="$HOME/ComfyUI"
 mkdir -p "$COMFY_DIR/models/checkpoints"
 cp ~/Downloads/*.safetensors "$COMFY_DIR/models/checkpoints/"
+
+comfy launch
 ```
 
 チェックポイントは `.ckpt` より `.safetensors` を優先してください。
