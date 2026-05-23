@@ -6,8 +6,6 @@
 
 ComfyUI のセットアップ手順は [リポジトリ README](../../../README.md#comfyui-setup-commands) を参照してください。
 
-チェックポイントはアニメ / イラスト系 (ToonYou, CounterfeitXL, AnythingXL など) を使用してください。
-
 ## チェックポイントのおすすめDL方法
 
 このワークフローは 1024×1024 生成前提なので、まずは SDXL 系のアニメ / イラスト向けチェックポイントを 1 つ入れるのがおすすめです。
@@ -17,9 +15,6 @@ ComfyUI のセットアップ手順は [リポジトリ README](../../../README.
 `uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
 
 ```sh
-export COMFY_DIR="$HOME/ComfyUI"
-mkdir -p "$COMFY_DIR/models/checkpoints"
-
 uvx hf download Simplicity-Ai/CounterfeitXL \
   CounterfeitXL_V2.5.safetensors \
   --local-dir "$COMFY_DIR/models/checkpoints"
