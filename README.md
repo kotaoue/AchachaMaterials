@@ -62,16 +62,6 @@ comfy launch
 3. Refer to prompts in the `prompts/` directory to adjust generation parameters.
 4. Save generated images to the appropriate `assets/characters/<name>/expressions/` folder.
 
-### Generating Logos (ComfyUI)
+### Materials
 
-Logo-specific generation steps live under `prompts/logos/<logo_name>/`.
-
-Current logo guides:
-
-- [OhYeah AchaAcha Logo](prompts/logos/ohyeah_achacha_logo/README.md)
-
-Generated logo images should be stored under `assets/logos/<logo_name>/`, and ComfyUI workflows should be stored under `workflows/logos/`.
-
-## License
-
-See the `LICENSE` file in each directory for the license of individual assets.
+- [Logo](prompts/logos/ohyeah_achacha_logo/README.md)
