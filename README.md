@@ -42,10 +42,8 @@ uv tool install comfy-cli
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 comfy install
-```
 
-```sh
-# setup. example
+# setup
 export COMFY_DIR="$HOME/ComfyUI"
 cp your_model.safetensors "$COMFY_DIR/models/checkpoints/"
 cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_DIR/input/"
@@ -54,7 +52,6 @@ cp assets/characters/your_character/reference/your_reference_image.png "$COMFY_D
 ```sh
 # launch
 comfy launch
-
 ```
 
 <http://127.0.0.1:8188>
