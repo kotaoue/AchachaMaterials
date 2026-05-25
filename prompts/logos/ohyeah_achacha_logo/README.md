@@ -17,9 +17,7 @@ CounterfeitXL はロゴ用途にも向いており、フラットなイラスト
 `uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
 
 ```sh
-uvx hf download Simplicity-Ai/CounterfeitXL \
-  CounterfeitXL_V2.5.safetensors \
-  --local-dir "$COMFY_DIR/models/checkpoints"
+uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --local-dir "$COMFY_DIR/models/checkpoints"
 ```
 
 DL後、ComfyUI を再起動するかブラウザを更新し、**Load Checkpoint** ノードで
