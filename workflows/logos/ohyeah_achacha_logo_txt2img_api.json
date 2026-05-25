@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "put_your_anime_checkpoint_here.safetensors"
+      "ckpt_name": "CounterfeitXL_V2.5.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -47,7 +47,7 @@
   },
   "5": {
     "inputs": {
-      "seed": -1,
+      "seed": 0,
       "steps": 28,
       "cfg": 7.0,
       "sampler_name": "dpmpp_2m",
