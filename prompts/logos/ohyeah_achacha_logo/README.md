@@ -17,6 +17,7 @@ CounterfeitXL はロゴ用途にも向いており、フラットなイラスト
 `uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
 
 ```sh
+export COMFY_DIR="$HOME/ComfyUI"
 uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --local-dir "$COMFY_DIR/models/checkpoints"
 ```
 
