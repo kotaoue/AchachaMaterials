@@ -24,20 +24,6 @@ uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --loc
 DL後、ComfyUI を再起動するかブラウザを更新し、**Load Checkpoint** ノードで
 `CounterfeitXL_V2.5.safetensors` を選択してください。
 
-### 代替モデル: AnythingXL をブラウザでDLする
-
-CounterfeitXL の代わりに使える別の SDXL チェックポイントです。Civitai から AnythingXL の `fp16 SafeTensor` をDLし、以下に配置します。
-
-```sh
-export COMFY_DIR="$HOME/ComfyUI"
-mkdir -p "$COMFY_DIR/models/checkpoints"
-cp ~/Downloads/*.safetensors "$COMFY_DIR/models/checkpoints/"
-
-comfy launch
-```
-
-チェックポイントは `.ckpt` より `.safetensors` を優先してください。
-
 ## 生成手順
 
 ### 1. ワークフローを読み込む
