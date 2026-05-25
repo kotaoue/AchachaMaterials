@@ -14,15 +14,12 @@ CounterfeitXL はロゴ用途にも向いており、フラットなイラスト
 
 ### 推奨モデル: CounterfeitXL を Hugging Face CLI でDLする
 
-`uv` が使える環境なら、`hf` コマンドを常設インストールせず `uvx hf` でDLできます。
-
 ```sh
 export COMFY_DIR="$HOME/ComfyUI"
 uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --local-dir "$COMFY_DIR/models/checkpoints"
-```
 
-DL後、ComfyUI を再起動するかブラウザを更新し、**Load Checkpoint** ノードで
-`CounterfeitXL_V2.5.safetensors` を選択してください。
+comfy launch
+```
 
 ## 生成手順
 
