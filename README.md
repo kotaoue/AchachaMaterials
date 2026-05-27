@@ -14,16 +14,14 @@ AchachaMaterials/
 │   ├── logos/                     # Logo assets
 │   ├── backgrounds/               # Background assets
 │   └── props/                     # Prop assets
-├── workflows/                     # ComfyUI workflow files
-│   ├── characters/
-│   └── logos/
-└── prompts/                       # Stable Diffusion prompts
- └── logos/
+└── workflows/                     # ComfyUI workflow files
+    ├── characters/
+    └── logos/
 ```
 
 ## Materials
 
-- [Logo](prompts/logos/ohyeah_achacha_logo/README.md)
+- [Logo](workflows/logos/README.md)
 
 ## Environment
 

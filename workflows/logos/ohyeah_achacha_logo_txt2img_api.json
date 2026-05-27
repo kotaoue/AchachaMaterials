@@ -1,4 +1,46 @@
 {
+  "_design": {
+    "name": "ohyeah-achacha-logo-v1",
+    "channel": "オーイェーのアチャチャチャンネル",
+    "intended_use": "Channel logo generation for OhYeahAchacha YouTube channel",
+    "model_recommendation": {
+      "type": "anime / illustration checkpoint",
+      "notes": "Use any SDXL checkpoint optimised for flat illustration or vector-like output (e.g. CounterfeitXL, AnythingXL)."
+    },
+    "design_intent": {
+      "text_layout": "オーイェーの (small, top) + アチャチャチャンネル (large, main)",
+      "font_style": "quirky-cute — between kitschy/retro and kawaii (e.g. RocknRoll One, Rampart One, 851手書き雑フォント)",
+      "background": "transparent",
+      "note": "SD/SDXL cannot reliably render Japanese text. Generate decorative elements in ComfyUI, then overlay Japanese text with a design tool (Canva, Figma, etc.)."
+    },
+    "color_variants": {
+      "full_color": "vibrant yellow orange red palette, saturated colors",
+      "monochrome": "single color, monochrome, grayscale outline",
+      "white_on_dark": "white fill, dark thick outline, high contrast"
+    },
+    "size_targets": {
+      "icon": {
+        "width": 512,
+        "height": 512,
+        "use_case": "Small icon / avatar"
+      },
+      "standard": {
+        "width": 1344,
+        "height": 832,
+        "use_case": "Standard (golden ratio)"
+      },
+      "banner": {
+        "width": 1920,
+        "height": 480,
+        "use_case": "YouTube channel art / banner"
+      }
+    },
+    "adjustment_guide": {
+      "more_pop": "Add pop art, halftone dots, bold comic style and raise cfg to 7.5.",
+      "more_outline": "Append thick black outline, stroke border, outlined art style to positive prompt.",
+      "more_transparent": "Post-process with background removal (rembg or similar) if alpha output is unavailable."
+    }
+  },
   "1": {
     "inputs": {
       "ckpt_name": "CounterfeitXL_V2.5.safetensors"
@@ -10,7 +52,7 @@
   },
   "2": {
     "inputs": {
-      "text": "masterpiece, best quality, channel logo design, pop art style, bold thick outlines, vibrant colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, readable at small size, versatile layout, no background, cutout style, anime-inspired lettering, bright saturated palette",
+      "text": "masterpiece, best quality, channel logo emblem, quirky cute pop style, bold thick outlines, vibrant warm colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, playful retro kawaii aesthetic, decorative frame, no text, no background, cutout style, bright saturated palette, yellow orange accent colors",
       "clip": [
         "1",
         1
@@ -23,7 +65,7 @@
   },
   "3": {
     "inputs": {
-      "text": "photorealistic, realistic texture, 3d render, drop shadow only, thin strokes, busy background, gradient background, white background, black background, watermark, signature, cluttered composition, muted colors, low contrast, blur, noise",
+      "text": "photorealistic, realistic texture, 3d render, text, letters, watermark, signature, busy background, gradient background, white background, black background, cluttered composition, muted colors, low contrast, blur, noise",
       "clip": [
         "1",
         1
