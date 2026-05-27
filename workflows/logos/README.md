@@ -17,12 +17,6 @@ cp ~/Downloads/RocknRollOne-Regular.ttf "$COMFY_DIR/fonts/"
 /Users/your_name/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf
 ```
 
-## チェックポイントのおすすめDL方法
-
-このワークフローは 1024×1024 生成前提なので、まずは SDXL 系のアニメ / イラスト向けチェックポイントを 1 つ入れるのがおすすめです。
-
-CounterfeitXL はロゴ用途にも向いており、フラットなイラスト・クリーンな輪郭線・ポップなカラーリングが得意なため、このロゴワークフローで推奨しています（キャラクター生成専用ではありません）。
-
 ### 推奨モデル: CounterfeitXL を Hugging Face CLI でDLする
 
 ```sh
