@@ -7,8 +7,8 @@
         "notes": "Use any SD1.5 or SDXL checkpoint optimised for flat illustration or vector-like output (e.g. ToonYou, CounterfeitXL, AnythingXL)."
     },
     "generation": {
-        "width": 1024,
-        "height": 1024,
+        "width": 1344,
+        "height": 832,
         "sampler": "dpmpp_2m",
         "scheduler": "karras",
         "steps": 28,
@@ -16,9 +16,15 @@
         "denoise": 1.0,
         "seed": -1
     },
+    "design_intent": {
+        "text_layout": "オーイェーの (small, top) + アチャチャチャンネル (large, main)",
+        "font_style": "quirky-cute — between kitschy/retro and kawaii (e.g. RocknRoll One, Rampart One, 851手書き雑フォント)",
+        "background": "transparent",
+        "note": "SD/SDXL cannot reliably render Japanese text. Generate decorative elements in ComfyUI, then overlay Japanese text with a design tool (Canva, Figma, etc.)."
+    },
     "prompts": {
-        "positive": "masterpiece, best quality, channel logo design, pop art style, bold thick outlines, vibrant colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, readable at small size, versatile layout, no background, cutout style, anime-inspired lettering, bright saturated palette",
-        "negative": "photorealistic, realistic texture, 3d render, drop shadow only, thin strokes, busy background, gradient background, white background, black background, watermark, signature, cluttered composition, muted colors, low contrast, blur, noise",
+        "positive": "masterpiece, best quality, channel logo emblem, quirky cute pop style, bold thick outlines, vibrant warm colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, playful retro kawaii aesthetic, decorative frame, no text, no background, cutout style, bright saturated palette, yellow orange accent colors",
+        "negative": "photorealistic, realistic texture, 3d render, text, letters, watermark, signature, busy background, gradient background, white background, black background, cluttered composition, muted colors, low contrast, blur, noise",
         "color_variants": {
             "full_color": "vibrant yellow orange red palette, saturated colors",
             "monochrome": "single color, monochrome, grayscale outline",
@@ -26,9 +32,21 @@
         }
     },
     "size_targets": {
-        "1x":     { "width": 512,  "height": 512,  "use_case": "Small icon / avatar" },
-        "2x":     { "width": 1024, "height": 1024, "use_case": "Standard use" },
-        "banner": { "width": 1920, "height": 480,  "use_case": "YouTube channel art / banner" }
+        "1x": {
+            "width": 512,
+            "height": 512,
+            "use_case": "Small icon / avatar"
+        },
+        "2x": {
+            "width": 1024,
+            "height": 1024,
+            "use_case": "Standard use"
+        },
+        "banner": {
+            "width": 1920,
+            "height": 480,
+            "use_case": "YouTube channel art / banner"
+        }
     },
     "adjustment_guide": {
         "more_pop": "Add pop art, halftone dots, bold comic style and raise cfg to 7.5.",
