@@ -2,10 +2,6 @@
 
 オーイェーのアチャチャチャンネル用ロゴを ComfyUI で生成する手順書です。
 
-## 前提条件
-
-ComfyUI のセットアップ手順は [リポジトリ README](../../README.md#install--launch) を参照してください。
-
 ### 追加カスタムノード: was-node-suite-comfyui
 
 テキスト描画に必要。ComfyUI Manager からインストールする。
