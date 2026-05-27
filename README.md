@@ -40,13 +40,22 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 comfy install
 
-comfy launch
+comfy launch -- --enable-manager
 ```
 
 <http://127.0.0.1:8188>
 
+### Upgrade
+
+```sh
+uv tool upgrade comfy-cli
+```
+
 ### Custom Node
 
 - was-node-suite
-  - Required for text rendering. Install via ComfyUI Manager.
-  - ComfyUI Manager → Custom Nodes → Search "was-node-suite" → Install
+  - Required for text rendering.
+
+    ```sh
+    comfy node install was-node-suite-comfyui
+    ```
