@@ -104,55 +104,22 @@
       "title": "Save Logo Image"
     }
   },
-  "9": {
-    "inputs": {
-      "image": [
-        "6",
-        0
-      ],
-      "text": "アチャチャチャンネル",
-      "font_file_path": "/Users/kotaoue/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf",
-      "font_size": 100,
-      "font_color": "white",
-      "x_position": 150,
-      "y_position": 680,
-      "shadow_distance": 4,
-      "shadow_blur": 2,
-      "shadow_color": "black"
-    },
-    "class_type": "Image Draw Text",
-    "_meta": {
-      "title": "テキスト: アチャチャチャンネル (メイン)"
-    }
-  },
-  "10": {
-    "inputs": {
-      "image": [
-        "9",
-        0
-      ],
-      "text": "オーイェーの",
-      "font_file_path": "/Users/kotaoue/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf",
-      "font_size": 52,
-      "font_color": "white",
-      "x_position": 300,
-      "y_position": 610,
-      "shadow_distance": 3,
-      "shadow_blur": 2,
-      "shadow_color": "black"
-    },
-    "class_type": "Image Draw Text",
-    "_meta": {
-      "title": "テキスト: オーイェーの (サブ)"
-    }
-  },
   "8": {
     "inputs": {
-      "text": "チャンネル: オーイェーのアチャチャチャンネル\nワークフロー: アチャチャロゴ txt2img\n\nテキストレイアウト:\n  オーイェーの (小・上部, ノード10) + アチャチャチャンネル (大・メイン, ノード9)\n\nフォント: PUT_FONT_PATH_HERE を各テキストノードに設定\n推奨フォント: RocknRoll One / Rampart One / 851手書き雑フォント\n\n要インストール: was-node-suite-comfyui (ComfyUI Manager から導入)"
+      "text": "チャンネル: オーイェーのアチャチャチャンネル\nワークフロー: アチャチャロゴ txt2img\n\nこの workflow はロゴの土台を生成する。\n文字は後段でユーザーが作成したラフを入れてロゴとして整える。\n\n運用方針:\n  1. まず seed 固定で土台を生成する\n  2. ユーザーのラフを見て文字造形を決める\n  3. ロゴとして一体感が出るように最終調整する\n\n推奨フォント: RocknRoll One / Rampart One / 851手書き雑フォント"
     },
     "class_type": "Note",
     "_meta": {
       "title": "オーイェーのアチャチャチャンネル"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": "方針メモ: 文字はフォントの単純な上書きではなく、ユーザーが作成したラフをベースにロゴとして清書・調整する。"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "ラフを入れる方針"
     }
   }
 }
