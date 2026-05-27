@@ -44,3 +44,9 @@ comfy launch
 ```
 
 <http://127.0.0.1:8188>
+
+### Custom Node
+
+- was-node-suite
+  - Required for text rendering. Install via ComfyUI Manager.
+  - ComfyUI Manager → Custom Nodes → Search "was-node-suite" → Install
