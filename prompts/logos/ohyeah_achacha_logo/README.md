@@ -25,40 +25,7 @@ comfy launch
 
 ## 生成手順
 
-### 1. ワークフローを読み込む
-
-ComfyUI の **Load** ボタンから以下を読み込む。
-
-```
-workflows/logos/ohyeah_achacha_logo_txt2img_api.json
-```
-
-### 2. チェックポイントを設定する
-
-ワークフロー内の **Load Checkpoint** ノードで、使用するモデルファイル名を選択する。
-
-> デフォルト値は `put_your_anime_checkpoint_here.safetensors` (プレースホルダー)
-
-### 3. 生成を実行する
-
-**Queue Prompt** を押して実行する。  
-生成された画像は ComfyUI の output フォルダ内 `ohyeah_achacha_logo/` に保存される。
-
-### 4. 構図を確定する
-
-気に入った結果が出たら **KSampler** ノードの seed 値を固定する。
-
-### 5. 成果物を配置する
-
-生成画像を `assets/logos/ohyeah_achacha_logo/` にコピーして管理する。
-
-推奨ファイル名:
-
-- `assets/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_v001.png`
-- `assets/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_v002.png`
-- `assets/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_final.png`
-
-### 6. 再現性メモを残す
+### 再現性メモを残す
 
 採用候補が決まったら、以下の値を `ohyeah_achacha_logo_preset.json` またはこの README に反映する。
 
@@ -91,10 +58,3 @@ workflows/logos/ohyeah_achacha_logo_txt2img_api.json
 | アイコン / アバター | 512×512 |
 | 標準 | 1024×1024 |
 | バナー | 1920×480 |
-
-## コミット前チェック
-
-- ワークフローJSONが `workflows/logos/ohyeah_achacha_logo_txt2img_api.json` に保存されている。
-- プリセットJSONが `prompts/logos/ohyeah_achacha_logo/ohyeah_achacha_logo_preset.json` に保存されている。
-- 最終候補のロゴ画像が `assets/logos/ohyeah_achacha_logo/` に保存されている。
-- README の生成手順が実際のワークフローと一致している。
