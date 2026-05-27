@@ -111,7 +111,7 @@
         0
       ],
       "text": "アチャチャチャンネル",
-      "font_file_path": "PUT_FONT_PATH_HERE",
+      "font_file_path": "/Users/kotaoue/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf",
       "font_size": 100,
       "font_color": "white",
       "x_position": 150,
@@ -132,7 +132,7 @@
         0
       ],
       "text": "オーイェーの",
-      "font_file_path": "PUT_FONT_PATH_HERE",
+      "font_file_path": "/Users/kotaoue/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf",
       "font_size": 52,
       "font_color": "white",
       "x_position": 300,

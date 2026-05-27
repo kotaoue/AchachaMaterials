@@ -2,30 +2,27 @@
 
 オーイェーのアチャチャチャンネル用ロゴを ComfyUI で生成する手順書です。
 
-### フォントの準備
+## Install
 
-```sh
-export COMFY_DIR="$HOME/Documents/comfy/ComfyUI"
-mkdir -p "$COMFY_DIR/fonts"
-# Google Fonts から RocknRollOne-Regular.ttf をDLして配置
-cp ~/Downloads/RocknRollOne-Regular.ttf "$COMFY_DIR/fonts/"
-```
-
-ワークフロー内の `PUT_FONT_PATH_HERE` を実際のパスに書き換える。
-
-```
-/Users/your_name/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf
-```
-
-### 推奨モデル: CounterfeitXL を Hugging Face CLI でDLする
+### Fonts
 
 ```sh
 comfy env
-
 export COMFY_DIR="$HOME/Documents/comfy/ComfyUI"
-uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --local-dir "$COMFY_DIR/models/checkpoints"
 
-comfy launch
+mkdir -p "$COMFY_DIR/fonts"
+curl -L "https://fonts.google.com/download?family=RocknRoll+One" -o ./rocknroll.zip
+unzip -j ./rocknroll.zip "RocknRollOne-Regular.ttf" -d "$COMFY_DIR/fonts/"
+rm ./rocknroll.zip
+```
+
+### Model
+
+```sh
+comfy env
+export COMFY_DIR="$HOME/Documents/comfy/ComfyUI"
+
+uvx hf download Simplicity-Ai/CounterfeitXL CounterfeitXL_V2.5.safetensors --local-dir "$COMFY_DIR/models/checkpoints"
 ```
 
 ## 生成手順
