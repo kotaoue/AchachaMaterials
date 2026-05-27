@@ -1,46 +1,4 @@
 {
-  "_design": {
-    "name": "ohyeah-achacha-logo-v1",
-    "channel": "オーイェーのアチャチャチャンネル",
-    "intended_use": "Channel logo generation for OhYeahAchacha YouTube channel",
-    "model_recommendation": {
-      "type": "anime / illustration checkpoint",
-      "notes": "Use any SDXL checkpoint optimised for flat illustration or vector-like output (e.g. CounterfeitXL, AnythingXL)."
-    },
-    "design_intent": {
-      "text_layout": "オーイェーの (small, top) + アチャチャチャンネル (large, main)",
-      "font_style": "quirky-cute — between kitschy/retro and kawaii (e.g. RocknRoll One, Rampart One, 851手書き雑フォント)",
-      "background": "transparent",
-      "note": "SD/SDXL cannot reliably render Japanese text. Generate decorative elements in ComfyUI, then overlay Japanese text with a design tool (Canva, Figma, etc.)."
-    },
-    "color_variants": {
-      "full_color": "vibrant yellow orange red palette, saturated colors",
-      "monochrome": "single color, monochrome, grayscale outline",
-      "white_on_dark": "white fill, dark thick outline, high contrast"
-    },
-    "size_targets": {
-      "icon": {
-        "width": 512,
-        "height": 512,
-        "use_case": "Small icon / avatar"
-      },
-      "standard": {
-        "width": 1344,
-        "height": 832,
-        "use_case": "Standard (golden ratio)"
-      },
-      "banner": {
-        "width": 1920,
-        "height": 480,
-        "use_case": "YouTube channel art / banner"
-      }
-    },
-    "adjustment_guide": {
-      "more_pop": "Add pop art, halftone dots, bold comic style and raise cfg to 7.5.",
-      "more_outline": "Append thick black outline, stroke border, outlined art style to positive prompt.",
-      "more_transparent": "Post-process with background removal (rembg or similar) if alpha output is unavailable."
-    }
-  },
   "1": {
     "inputs": {
       "ckpt_name": "CounterfeitXL_V2.5.safetensors"
@@ -137,13 +95,64 @@
     "inputs": {
       "filename_prefix": "achacha/logo",
       "images": [
-        "6",
+        "10",
         0
       ]
     },
     "class_type": "SaveImage",
     "_meta": {
       "title": "Save Logo Image"
+    }
+  },
+  "9": {
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "text": "アチャチャチャンネル",
+      "font_file_path": "PUT_FONT_PATH_HERE",
+      "font_size": 100,
+      "font_color": "white",
+      "x_position": 150,
+      "y_position": 680,
+      "shadow_distance": 4,
+      "shadow_blur": 2,
+      "shadow_color": "black"
+    },
+    "class_type": "Image Draw Text",
+    "_meta": {
+      "title": "テキスト: アチャチャチャンネル (メイン)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "image": [
+        "9",
+        0
+      ],
+      "text": "オーイェーの",
+      "font_file_path": "PUT_FONT_PATH_HERE",
+      "font_size": 52,
+      "font_color": "white",
+      "x_position": 300,
+      "y_position": 610,
+      "shadow_distance": 3,
+      "shadow_blur": 2,
+      "shadow_color": "black"
+    },
+    "class_type": "Image Draw Text",
+    "_meta": {
+      "title": "テキスト: オーイェーの (サブ)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "チャンネル: オーイェーのアチャチャチャンネル\nワークフロー: アチャチャロゴ txt2img\n\nテキストレイアウト:\n  オーイェーの (小・上部, ノード10) + アチャチャチャンネル (大・メイン, ノード9)\n\nフォント: PUT_FONT_PATH_HERE を各テキストノードに設定\n推奨フォント: RocknRoll One / Rampart One / 851手書き雑フォント\n\n要インストール: was-node-suite-comfyui (ComfyUI Manager から導入)"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "オーイェーのアチャチャチャンネル"
     }
   }
 }

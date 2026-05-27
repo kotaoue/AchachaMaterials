@@ -4,7 +4,30 @@
 
 ## 前提条件
 
-ComfyUI のセットアップ手順は [リポジトリ README](../../../README.md#comfyui-setup-commands) を参照してください。
+ComfyUI のセットアップ手順は [リポジトリ README](../../README.md#install--launch) を参照してください。
+
+### 追加カスタムノード: was-node-suite-comfyui
+
+テキスト描画に必要。ComfyUI Manager からインストールする。
+
+```
+ComfyUI Manager → Custom Nodes → Search "was-node-suite" → Install
+```
+
+### フォントの準備
+
+```sh
+export COMFY_DIR="$HOME/Documents/comfy/ComfyUI"
+mkdir -p "$COMFY_DIR/fonts"
+# Google Fonts から RocknRollOne-Regular.ttf をDLして配置
+cp ~/Downloads/RocknRollOne-Regular.ttf "$COMFY_DIR/fonts/"
+```
+
+ワークフロー内の `PUT_FONT_PATH_HERE` を実際のパスに書き換える。
+
+```
+/Users/your_name/Documents/comfy/ComfyUI/fonts/RocknRollOne-Regular.ttf
+```
 
 ## チェックポイントのおすすめDL方法
 
