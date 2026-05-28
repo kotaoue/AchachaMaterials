@@ -1,0 +1,125 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "CounterfeitXL_V2.5.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": "masterpiece, best quality, channel logo emblem, quirky cute pop style, bold thick outlines, vibrant warm colors, high contrast, transparent background, clean vector-like illustration, flat shading, cheerful energetic mood, playful retro kawaii aesthetic, decorative frame, no text, no background, cutout style, bright saturated palette, yellow orange accent colors",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": "photorealistic, realistic texture, 3d render, text, letters, watermark, signature, busy background, gradient background, white background, black background, cluttered composition, muted colors, low contrast, blur, noise",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "4": {
+    "inputs": {
+      "width": 1344,
+      "height": 832,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "seed": 0,
+      "steps": 28,
+      "cfg": 7.0,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "txt2img Sampler"
+    }
+  },
+  "6": {
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "filename_prefix": "achacha/logo",
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Logo Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "text": "チャンネル: オーイェーのアチャチャチャンネル\nワークフロー: アチャチャロゴ txt2img\n\nこの workflow はロゴの土台を生成する。\n文字は後段でユーザーが作成したラフを入れてロゴとして整える。\n\n運用方針:\n  1. まず seed 固定で土台を生成する\n  2. ユーザーのラフを見て文字造形を決める\n  3. ロゴとして一体感が出るように最終調整する\n\n推奨フォント: RocknRoll One / Rampart One / 851手書き雑フォント"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "オーイェーのアチャチャチャンネル"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": "方針メモ: 文字はフォントの単純な上書きではなく、ユーザーが作成したラフをベースにロゴとして清書・調整する。"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "ラフを入れる方針"
+    }
+  }
+}
