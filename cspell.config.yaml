@@ -6,10 +6,12 @@ words:
   - Achacha
   - ckpt
   - comfyui
+  - controlnet
   - denoise
   - dpmpp
   - grayscale
   - karras
+  - kawaii
   - kotaoue
   - LoRA
   - ohyeah
@@ -20,5 +22,6 @@ words:
   - safetensors
   - SDXL
   - Toon
+  - xinsir
 ignoreWords: []
 import: []

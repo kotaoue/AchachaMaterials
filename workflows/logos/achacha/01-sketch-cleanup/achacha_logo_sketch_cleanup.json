@@ -1,0 +1,167 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "CounterfeitXL_V2.5.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "achacha_logo_sketch.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Sketch"
+    }
+  },
+  "3": {
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "Encode Sketch as Init Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "control_net_name": "xinsir-sdxl-scribble.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load Sketch ControlNet"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "clean readable Japanese hand-lettered channel logo, exact layout from sketch, polished marker lettering, bold thick outlines, playful retro kawaii style, cheerful energetic mood, simple warm base colors, flat shading, centered logo composition, clean edges, vector-like finish, no extra letters",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "wrong text, unreadable text, extra characters, missing characters, random letters, english letters, watermark, signature, photorealistic, 3d render, busy background, clutter, noisy lines, blurry edges, low contrast, distorted typography",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "7": {
+    "inputs": {
+      "strength": 0.85,
+      "start_percent": 0.0,
+      "end_percent": 0.8,
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "control_net": [
+        "4",
+        0
+      ],
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ControlNetApplyAdvanced",
+    "_meta": {
+      "title": "Apply Sketch ControlNet"
+    }
+  },
+  "8": {
+    "inputs": {
+      "seed": 0,
+      "steps": 32,
+      "cfg": 6.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.62,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "7",
+        1
+      ],
+      "latent_image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "img2img Sampler"
+    }
+  },
+  "9": {
+    "inputs": {
+      "samples": [
+        "8",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode Clean Logo"
+    }
+  },
+  "10": {
+    "inputs": {
+      "filename_prefix": "achacha/sketch-cleanup/base_logo",
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Clean Base Logo"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": "手書き下書きをロゴ基準画像へ清書する workflow。\n\n入力画像: achacha_logo_sketch.png\n目的: 文字の形と構図を固定し、後続の色・雰囲気調整に渡す基準画像を作る。\n\n文字が崩れる場合は ControlNet strength を上げ、denoise を下げる。下書きの粗さが残る場合は denoise を少し上げる。"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "Workflow Note"
+    }
+  }
+}
