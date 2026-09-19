@@ -23,7 +23,15 @@
 
 ## Install
 
+2026-09 時点では、`CounterfeitXL_V2.5` と `xinsir/controlnet-scribble-sdxl-1.0` は引き続き入手できる。
+ComfyUI Desktop を使っている場合は、まず Storage からモデル保存先を開き、
+checkpoint は `models/checkpoints/`、ControlNet は `models/controlnet/`、font は `fonts/` に置く。
+追加後に一覧へ出ない場合は、ComfyUI を再読込または再起動する。
+
 ### Fonts
+
+ComfyUI Desktop の場合は `fonts/` に `RocknRollOne-Regular.ttf` を置けばよい。
+以下は source / manual install で配置場所を明示したいときの例。
 
 ```sh
 comfy env
@@ -36,6 +44,10 @@ rm ./rocknroll.zip
 ```
 
 ### Model
+
+ComfyUI Desktop の場合は `CounterfeitXL_V2.5.safetensors` を
+`models/checkpoints/` に置く。
+以下は source / manual install の例。
 
 ```sh
 comfy env

@@ -21,6 +21,10 @@
 
 下書きの線を維持するため、SDXL 用の scribble ControlNet を使う。
 
+2026-09 時点でも `xinsir/controlnet-scribble-sdxl-1.0` は引き続き使える。
+ComfyUI Desktop の場合は、モデル保存先の `models/controlnet/` に
+scribble 用 weight を置けばよい。以下は source / manual install の例。
+
 ```sh
 comfy env
 export COMFY_DIR="$HOME/Documents/comfy/ComfyUI"

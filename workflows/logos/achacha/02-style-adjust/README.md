@@ -17,6 +17,8 @@
 ComfyUI の input フォルダに、基準画像を `achacha_logo_base.png` として置く。
 
 基準画像は `01-sketch-cleanup` の採用候補から選ぶ。
+Checkpoint 一覧に `CounterfeitXL_V2.5.safetensors` が出ない場合は、
+親 README にある保存先を見直し、ComfyUI を再読込または再起動する。
 
 ## Workflow
 
