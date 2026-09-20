@@ -1,0 +1,140 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "CounterfeitXL_V2.5.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "achacha_logo_base.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Base Logo"
+    }
+  },
+  "3": {
+    "inputs": {
+      "pixels": [
+        "2",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "Encode Base Logo"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "same readable Japanese channel logo as reference image, preserve exact layout and letter shapes, polished pop logo, bold thick outlines, cheerful energetic mood, crisp edges, flat clean finish, warm playful color palette, high contrast, sticker-like logo, no extra letters",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "wrong text, unreadable text, extra characters, missing characters, warped text, random letters, english letters, watermark, signature, photorealistic, 3d render, busy background, scene, frame, clutter, blur, noisy edges, low contrast",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "6": {
+    "inputs": {
+      "seed": 0,
+      "steps": 24,
+      "cfg": 5.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.26,
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "latent_image": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "Style Adjust Sampler"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "6",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "Decode Styled Logo"
+    }
+  },
+  "8": {
+    "inputs": {
+      "filename_prefix": "achacha/style-adjust/styled_logo",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Styled Logo"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": "清書済みの基準画像から、色合いと雰囲気のバリエーションを作る workflow。\n\n入力画像: achacha_logo_base.png\n目的: 字形を保ったまま、色・質感・テンションだけを調整する。\n\n文字が崩れる場合は denoise を下げる。絵柄の変化が弱い場合は denoise を少し上げる。"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "Workflow Note"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": "Preset prompt suffixes:\n\nfull_color: vibrant yellow orange red palette, saturated pop colors, lively sticker logo\nretro_tv: retro Japanese TV show logo, warm halftone texture, playful broadcast graphics\nclean_flat: clean flat vector logo, crisp outline, limited color palette, print-ready finish\nmonochrome: single color logo, monochrome ink, bold readable outline\nwhite_on_dark: white fill, dark thick outline, high contrast, night mode logo"
+    },
+    "class_type": "Note",
+    "_meta": {
+      "title": "Style Presets"
+    }
+  }
+}
